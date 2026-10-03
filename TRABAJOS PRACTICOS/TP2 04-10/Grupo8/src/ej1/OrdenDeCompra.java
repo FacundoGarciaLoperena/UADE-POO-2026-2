@@ -56,4 +56,12 @@ public class OrdenDeCompra {
 			return false;
 		return this.code == other.code;
 	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
 }
