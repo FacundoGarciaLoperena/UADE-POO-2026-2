@@ -1,5 +1,4 @@
-package tp1;
-
+package tp2;
 
 public class Pasaje {
 	private int flightCode;
@@ -16,6 +15,10 @@ public class Pasaje {
 		this.surname = surname;
 		this.firstClass = firstClass;
 		this.smoker = smoker;
+	}
+
+	public int getTicketNumber() {
+		return ticketNumber;
 	}
 
 	public int getFlightCode() {
@@ -60,7 +63,7 @@ public class Pasaje {
 
 	@Override
 	public String toString() {
-		return  "Numero de Ticket:%d | Numero de vuelo: %d | Nombre Completo: %s %s | Clase : %s | Zona fumadores : %s".formatted(ticketNumber,flightCode,name,surname 
+		return  "Pasaje Nro %d | Numero de vuelo: %d | Nombre Completo: %s %s | Clase : %s | Zona fumadores : %s".formatted(ticketNumber,flightCode,name,surname
 				,firstClass ? "Primera Clase" : "Economica",smoker ? "si" : "no");
 	}
 	
@@ -74,6 +77,10 @@ public class Pasaje {
 
 		return this.ticketNumber == other.ticketNumber;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Integer.hashCode(ticketNumber);
+	}
 
 }
