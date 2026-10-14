@@ -1,4 +1,4 @@
-package tp1;
+package tp2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,8 @@ public class SistemaDeReserva {
 	private List<Vuelo> flights;
 	private List<Pasaje> tickets = new ArrayList<Pasaje>();
 
+	private int nextTicketNumber = 1;
+
 	public SistemaDeReserva(List<Vuelo> flights) {
 		this.flights = flights;
 	}
@@ -14,6 +16,14 @@ public class SistemaDeReserva {
 	public SistemaDeReserva(List<Vuelo> flights, List<Pasaje> tickets) {
 		this.flights = flights;
 		this.tickets = tickets;
+		for (Pasaje ticket : tickets)
+			if (ticket.getTicketNumber() >= nextTicketNumber)
+				nextTicketNumber = ticket.getTicketNumber() + 1;
+	}
+
+
+	public int nextTicketNumber() {
+    	return nextTicketNumber++;
 	}
 
 	public List<Vuelo> getFlights() {

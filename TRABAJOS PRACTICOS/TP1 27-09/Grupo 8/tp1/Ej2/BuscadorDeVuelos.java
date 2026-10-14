@@ -1,4 +1,4 @@
-package tp1;
+package tp2;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BuscadorDeVuelos {
 
-	public static List<Vuelo> buscarVuelos(List<Vuelo> flights, boolean smoker, boolean firstClass, LocalDateTime earliestDate,
+	public List<Vuelo> buscarVuelos(List<Vuelo> flights,boolean smoker, boolean firstClass, LocalDateTime earliestDate,
 			LocalDateTime latestDate, String destination, String origin) {
 		List<Vuelo> result = new ArrayList<Vuelo>();
 		for (Vuelo flight : flights) {
