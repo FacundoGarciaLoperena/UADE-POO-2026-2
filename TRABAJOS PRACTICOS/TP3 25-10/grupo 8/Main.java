@@ -23,10 +23,10 @@ public class Main {
 	    System.out.println("Velocidad tras desacelerar 50 km/h: " + auto.getVelocidadActualKMH() + " km/h");
 	    
 	    auto.frenar();
-	    System.out.println("El autom ha frenado. Velocidad actual: " + auto.getVelocidadActualKMH() + " km/h");
+	    System.out.println("El auto ha frenado. Velocidad actual: " + auto.getVelocidadActualKMH() + " km/h");
 	    
 	    auto.setVelocidadActualKMH(60); 
 	    double tiempo = auto.calcularTiempoLlegada(150);
-	    System.out.println("Tiempo estimado para recorrer 150 km a " + auto.getVelocidadActualKMH() + " km/h: " + tiempo + " horas.");
+	    System.out.println("Tiempo estimado para recorrer 150 km a " + auto.getVelocidadActualKMH() + " km/h: " + tiempo + " horas");
 	}
 }
