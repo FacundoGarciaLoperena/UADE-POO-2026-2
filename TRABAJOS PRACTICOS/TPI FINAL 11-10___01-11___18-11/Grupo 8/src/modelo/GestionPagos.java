@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionPagos {
 	private Set<Pago> pagos;
 
@@ -31,9 +34,5 @@ public class GestionPagos {
 		Pago p = buscarPago(idPago);
 		if (p != null)
 			pagos.remove(p);
-	}
-
-	public Set<Pago> getPagos() {
-		return pagos;
 	}
 }

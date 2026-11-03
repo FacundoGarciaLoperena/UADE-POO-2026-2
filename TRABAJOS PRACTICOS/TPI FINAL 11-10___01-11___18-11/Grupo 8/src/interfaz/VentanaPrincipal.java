@@ -13,7 +13,7 @@ public class VentanaPrincipal extends JFrame {
 	public VentanaPrincipal() {
 
 		setTitle("Gym Manager");
-		setSize(800, 600);
+		setSize(1000, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 
@@ -23,6 +23,7 @@ public class VentanaPrincipal extends JFrame {
 		
 		CardLayout cardLayout = new CardLayout();
 		JPanel contenido = new JPanel(cardLayout);
+		contenido.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
 		
 		
 		DashboardPanel dashboard = new DashboardPanel();

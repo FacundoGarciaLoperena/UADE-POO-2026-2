@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionClientes {
 	private Set<Cliente> clientes;
 
@@ -31,9 +34,5 @@ public class GestionClientes {
 		Cliente c = buscarCliente(dni);
 		if (c != null)
 			clientes.remove(c);
-	}
-
-	public Set<Cliente> getClientes() {
-		return clientes;
 	}
 }

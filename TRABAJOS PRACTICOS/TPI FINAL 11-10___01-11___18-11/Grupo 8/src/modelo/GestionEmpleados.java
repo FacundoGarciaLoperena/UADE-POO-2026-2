@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionEmpleados {
 	private Set<Empleado> empleados;
 	private Set<TurnoLaboral> turnos;
@@ -56,13 +59,5 @@ public class GestionEmpleados {
 		TurnoLaboral t = buscarTurnoLaboral(idTurno);
 		if (t != null)
 			turnos.remove(t);
-	}
-
-	public Set<Empleado> getEmpleados() {
-		return empleados;
-	}
-
-	public Set<TurnoLaboral> getTurnos() {
-		return turnos;
 	}
 }

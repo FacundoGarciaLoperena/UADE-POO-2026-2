@@ -2,7 +2,16 @@ package modelo;
 
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Pago {
+	public enum MetodoDePago {
+		EFECTIVO, DEBITO, CREDITO, TRANSFERENCIA
+	}
+
 	private int idPago;
 	private LocalDateTime fechaHora;
 	private double monto;
@@ -19,54 +28,4 @@ public class Pago {
 		this.membresia = membresia;
 		this.metodo = metodo;
 	}
-
-	public int getIdPago() {
-		return idPago;
-	}
-
-	public void setIdPago(int idPago) {
-		this.idPago = idPago;
-	}
-
-	public LocalDateTime getFechaHora() {
-		return fechaHora;
-	}
-
-	public void setFechaHora(LocalDateTime fechaHora) {
-		this.fechaHora = fechaHora;
-	}
-
-	public double getMonto() {
-		return monto;
-	}
-
-	public void setMonto(double monto) {
-		this.monto = monto;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Membresia getMembresia() {
-		return membresia;
-	}
-
-	public void setMembresia(Membresia membresia) {
-		this.membresia = membresia;
-	}
-
-	public MetodoDePago getMetodo() {
-		return metodo;
-	}
-
-	public void setMetodo(MetodoDePago metodo) {
-		this.metodo = metodo;
-	}
-	
-	
 }

@@ -2,6 +2,11 @@ package modelo;
 
 import java.time.LocalDate;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Empleado extends Persona {
 	private int nmroEmpleado;
 	private double salario;
@@ -12,30 +17,6 @@ public class Empleado extends Persona {
 		super(nombreCompleto, fechaNacimiento, genero);
 		this.nmroEmpleado = nmroEmpleado;
 		this.salario = salario;
-		this.fechaContratacion = fechaContratacion;
-	}
-
-	public int getNmroEmpleado() {
-		return nmroEmpleado;
-	}
-
-	public void setNmroEmpleado(int nmroEmpleado) {
-		this.nmroEmpleado = nmroEmpleado;
-	}
-
-	public double getSalario() {
-		return salario;
-	}
-
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
-
-	public LocalDate getFechaContratacion() {
-		return fechaContratacion;
-	}
-
-	public void setFechaContratacion(LocalDate fechaContratacion) {
 		this.fechaContratacion = fechaContratacion;
 	}
 }

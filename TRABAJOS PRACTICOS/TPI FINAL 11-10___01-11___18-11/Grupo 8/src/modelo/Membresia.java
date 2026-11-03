@@ -4,7 +4,16 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Membresia {
+	public enum EstadoMembresia {
+		VIGENTE, VENCIDA, CANCELADA
+	}
+
 	private int idMembresia;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
@@ -22,61 +31,5 @@ public class Membresia {
 		this.plan = plan;
 		this.cliente = cliente;
 		this.pagos = new HashSet<>();
-	}
-
-	public int getIdMembresia() {
-		return idMembresia;
-	}
-
-	public void setIdMembresia(int idMembresia) {
-		this.idMembresia = idMembresia;
-	}
-
-	public LocalDate getFechaInicio() {
-		return fechaInicio;
-	}
-
-	public void setFechaInicio(LocalDate fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-
-	public LocalDate getFechaFin() {
-		return fechaFin;
-	}
-
-	public void setFechaFin(LocalDate fechaFin) {
-		this.fechaFin = fechaFin;
-	}
-
-	public EstadoMembresia getEstado() {
-		return estado;
-	}
-
-	public void setEstado(EstadoMembresia estado) {
-		this.estado = estado;
-	}
-
-	public Plan getPlan() {
-		return plan;
-	}
-
-	public void setPlan(Plan plan) {
-		this.plan = plan;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Set<Pago> getPagos() {
-		return pagos;
-	}
-
-	public void setPagos(Set<Pago> pagos) {
-		this.pagos = pagos;
 	}
 }

@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionInventario {
 	private Set<Maquina> maquinas;
 	private Set<Mantenimiento> mantenimientos;
@@ -56,13 +59,5 @@ public class GestionInventario {
 		Mantenimiento m = buscarMantenimiento(idMantenimiento);
 		if (m != null)
 			mantenimientos.remove(m);
-	}
-
-	public Set<Maquina> getMaquinas() {
-		return maquinas;
-	}
-
-	public Set<Mantenimiento> getMantenimientos() {
-		return mantenimientos;
 	}
 }

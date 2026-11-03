@@ -2,7 +2,16 @@ package modelo;
 
 import java.time.LocalDate;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Inscripcion {
+	public enum EstadoInscripcion {
+		CONFIRMADA, CANCELADA, ASISTIO, AUSENTE
+	}
+
 	private int idInscripcion;
 	private Cliente cliente;
 	private Clase clase;
@@ -15,46 +24,6 @@ public class Inscripcion {
 		this.cliente = cliente;
 		this.clase = clase;
 		this.fechaAlta = fechaAlta;
-		this.estado = estado;
-	}
-
-	public int getIdInscripcion() {
-		return idInscripcion;
-	}
-
-	public void setIdInscripcion(int idInscripcion) {
-		this.idInscripcion = idInscripcion;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Clase getClase() {
-		return clase;
-	}
-
-	public void setClase(Clase clase) {
-		this.clase = clase;
-	}
-
-	public LocalDate getFechaAlta() {
-		return fechaAlta;
-	}
-
-	public void setFechaAlta(LocalDate fechaAlta) {
-		this.fechaAlta = fechaAlta;
-	}
-
-	public EstadoInscripcion getEstado() {
-		return estado;
-	}
-
-	public void setEstado(EstadoInscripcion estado) {
 		this.estado = estado;
 	}
 }

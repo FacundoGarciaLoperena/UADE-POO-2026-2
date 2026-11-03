@@ -2,6 +2,11 @@ package modelo;
 
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Clase {
 	private int idClase;
 	private LocalDateTime horaInicio;
@@ -17,54 +22,6 @@ public class Clase {
 		this.horaFin = horaFin;
 		this.profesor = profesor;
 		this.actividad = actividad;
-		this.capacidadMaxima = capacidadMaxima;
-	}
-
-	public int getIdClase() {
-		return idClase;
-	}
-
-	public void setIdClase(int idClase) {
-		this.idClase = idClase;
-	}
-
-	public LocalDateTime getHoraInicio() {
-		return horaInicio;
-	}
-
-	public void setHoraInicio(LocalDateTime horaInicio) {
-		this.horaInicio = horaInicio;
-	}
-
-	public LocalDateTime getHoraFin() {
-		return horaFin;
-	}
-
-	public void setHoraFin(LocalDateTime horaFin) {
-		this.horaFin = horaFin;
-	}
-
-	public Profesor getProfesor() {
-		return profesor;
-	}
-
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
-	}
-
-	public Actividad getActividad() {
-		return actividad;
-	}
-
-	public void setActividad(Actividad actividad) {
-		this.actividad = actividad;
-	}
-
-	public int getCapacidadMaxima() {
-		return capacidadMaxima;
-	}
-
-	public void setCapacidadMaxima(int capacidadMaxima) {
 		this.capacidadMaxima = capacidadMaxima;
 	}
 }

@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionActividadesClases {
 	private Set<Actividad> actividades;
 	private Set<Clase> clases;
@@ -81,17 +84,5 @@ public class GestionActividadesClases {
 		Inscripcion i = buscarInscripcion(idInscripcion);
 		if (i != null)
 			inscripciones.remove(i);
-	}
-
-	public Set<Actividad> getActividades() {
-		return actividades;
-	}
-
-	public Set<Clase> getClases() {
-		return clases;
-	}
-
-	public Set<Inscripcion> getInscripciones() {
-		return inscripciones;
 	}
 }

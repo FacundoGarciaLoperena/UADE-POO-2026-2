@@ -1,4 +1,6 @@
 /modelo/
 /interfaz/
-/ventanaPrincipal/
-/menu/
+/persistencia/
+/expeciones/
+/excepciones/
+/data/

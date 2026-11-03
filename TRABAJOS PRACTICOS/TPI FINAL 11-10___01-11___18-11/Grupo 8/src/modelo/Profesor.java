@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Profesor extends Empleado {
 	private Set<String> certificaciones;
 
@@ -11,13 +16,5 @@ public class Profesor extends Empleado {
 			double salario, LocalDate fechaContratacion) {
 		super(nombreCompleto, fechaNacimiento, genero, nmroEmpleado, salario, fechaContratacion);
 		this.certificaciones = new HashSet<>();
-	}
-
-	public Set<String> getCertificaciones() {
-		return certificaciones;
-	}
-
-	public void setCertificaciones(Set<String> certificaciones) {
-		this.certificaciones = certificaciones;
 	}
 }

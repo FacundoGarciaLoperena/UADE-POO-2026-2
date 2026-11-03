@@ -3,6 +3,9 @@ package modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.Getter;
+
+@Getter
 public class GestionPlanesYMembresias {
 	private Set<Plan> planes;
 	private Set<Membresia> membresias;
@@ -56,13 +59,5 @@ public class GestionPlanesYMembresias {
 		Membresia m = buscarMembresia(idMembresia);
 		if (m != null)
 			membresias.remove(m);
-	}
-
-	public Set<Plan> getPlanes() {
-		return planes;
-	}
-
-	public Set<Membresia> getMembresias() {
-		return membresias;
 	}
 }

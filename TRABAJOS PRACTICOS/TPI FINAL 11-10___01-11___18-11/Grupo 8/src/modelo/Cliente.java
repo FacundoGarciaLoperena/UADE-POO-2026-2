@@ -1,17 +1,28 @@
 package modelo;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Cliente extends Persona {
+	public enum EstadoCliente {
+		ACTIVO, INACTIVO, SUSPENDIDO
+	}
+
 	private int dni;
 	private String telefono;
 	private String mail;
 	private LocalDate fechaAlta;
 	private EstadoCliente estado;
-	private Set<Membresia> membresias;
-	private Set<Ingreso> ingresos;
+	private Map<Integer,Membresia> membresias = new HashMap<Integer,Membresia>();
+	private Map<Integer,Ingreso> ingresos = new HashMap<Integer,Ingreso>();
 
 	public Cliente(String nombreCompleto, LocalDate fechaNacimiento, Genero genero, int dni, String telefono,
 			String mail, LocalDate fechaAlta, EstadoCliente estado) {
@@ -21,63 +32,33 @@ public class Cliente extends Persona {
 		this.mail = mail;
 		this.fechaAlta = fechaAlta;
 		this.estado = estado;
-		this.membresias = new HashSet<>();
-		this.ingresos = new HashSet<>();
 	}
-
+	
 	public int getDni() {
-		return dni;
+		return this.dni;
 	}
-
-	public void setDni(int dni) {
-		this.dni = dni;
+	
+	public boolean isActivo()
+	{
+		return this.estado.equals(EstadoCliente.ACTIVO);
 	}
-
-	public String getTelefono() {
-		return telefono;
+	
+	public boolean isMoroso()
+	{
+		return this.estado.equals(EstadoCliente.SUSPENDIDO);
 	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (!(obj instanceof Cliente)) return false;
+		
+		Cliente otro = (Cliente) obj;
+		return dni == otro.dni;
 	}
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public LocalDate getFechaAlta() {
-		return fechaAlta;
-	}
-
-	public void setFechaAlta(LocalDate fechaAlta) {
-		this.fechaAlta = fechaAlta;
-	}
-
-	public EstadoCliente getEstado() {
-		return estado;
-	}
-
-	public void setEstado(EstadoCliente estado) {
-		this.estado = estado;
-	}
-
-	public Set<Membresia> getMembresias() {
-		return membresias;
-	}
-
-	public void setMembresias(Set<Membresia> membresias) {
-		this.membresias = membresias;
-	}
-
-	public Set<Ingreso> getIngresos() {
-		return ingresos;
-	}
-
-	public void setIngresos(Set<Ingreso> ingresos) {
-		this.ingresos = ingresos;
+	
+	@Override
+	public int hashCode() {
+		return Integer.hashCode(dni);
 	}
 }
