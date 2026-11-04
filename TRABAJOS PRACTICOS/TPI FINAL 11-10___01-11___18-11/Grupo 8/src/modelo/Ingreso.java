@@ -2,6 +2,8 @@ package modelo;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +17,7 @@ public class Ingreso {
 	private int idIngreso;
 	private LocalDateTime horaIngreso;
 	private LocalDateTime horaEgreso;
+	@JsonIgnore
 	private Cliente cliente;
 	private EstadoIngreso estado;
 

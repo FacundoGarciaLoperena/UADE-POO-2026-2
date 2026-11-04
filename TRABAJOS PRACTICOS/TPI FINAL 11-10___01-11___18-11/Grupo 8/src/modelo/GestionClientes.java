@@ -13,9 +13,9 @@ import persistencia.Repository;
 @Getter
 public class GestionClientes {
 	private Map<Integer, Cliente> clientes = new HashMap<Integer, Cliente>();
-	private final Repository<Cliente, Integer> repo;
+	private final Repository<Integer, Cliente> repo;
 	
-	public GestionClientes(Repository<Cliente, Integer> repo) throws IOException {
+	public GestionClientes(Repository<Integer, Cliente> repo) throws IOException {
 		this.repo = repo;
 		this.clientes = repo.cargarTodos(); 
 	}

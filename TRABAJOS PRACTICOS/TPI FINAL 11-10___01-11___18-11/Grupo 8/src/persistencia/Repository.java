@@ -3,7 +3,7 @@ package persistencia;
 import java.io.IOException;
 import java.util.Map;
 
-public interface Repository<T, ID> {
+public interface Repository<ID, T> {
 
 	Map<ID, T> cargarTodos() throws IOException;
 

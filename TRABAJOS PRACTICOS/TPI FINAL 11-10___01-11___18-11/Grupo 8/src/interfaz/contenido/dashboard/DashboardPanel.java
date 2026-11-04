@@ -33,7 +33,8 @@ public class DashboardPanel extends PanelBase{
 		contenidoTop.add(new TarjetaDashboard(
 		    "Miembros activos", String.valueOf(gimnasio.getGestionClientes().contarClientesActivos()), "Socios con membresía"
 		));
-
+		
+		
 		contenidoTop.add(new TarjetaDashboard(
 		    "Cupos libres hoy", "25", "20% de capacidad libre"
 		));

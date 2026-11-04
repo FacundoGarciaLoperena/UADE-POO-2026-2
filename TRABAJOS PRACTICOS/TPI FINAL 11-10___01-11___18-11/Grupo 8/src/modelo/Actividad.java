@@ -15,4 +15,13 @@ public class Actividad {
 		this.descripcion = descripcion;
 		this.duracionMins = duracionMins;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (!(obj instanceof Actividad otro)) return false;
+		
+		return nombre == otro.nombre;
+		
+	}
 }

@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			Repository<Cliente, Integer> repoClientes = new ClienteRepositoryJson();
+			Repository<Integer, Cliente> repoClientes = new ClienteRepositoryJson();
 
 			Gimnasio miGimnasio = new Gimnasio("Power Gym", "Facundo", "Av. Corrientes 1234", "1122334455", 100,
 					repoClientes);

@@ -4,8 +4,11 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import interfaz.contenido.clases.ClasesPanel;
+import interfaz.contenido.clientes.ClientesPanel;
 import interfaz.contenido.dashboard.DashboardPanel;
 import interfaz.menu.MenuIzq;
+import modelo.Clase;
 import modelo.Gimnasio;
 
 public class VentanaPrincipal extends JFrame {
@@ -28,11 +31,16 @@ public class VentanaPrincipal extends JFrame {
 		JPanel contenido = new JPanel(cardLayout);
 		contenido.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
 		
-		
+	
 		DashboardPanel dashboard = new DashboardPanel(gimnasio);
+		ClasesPanel clases = new ClasesPanel();
+		ClientesPanel clientes = new ClientesPanel();
+		
 
 		contenido.add(dashboard, "DASHBOARD");
-		cardLayout.show(contenido,"DASHBOARD");
+		contenido.add(clases, "CLASES");
+		contenido.add(clientes,"CLIENTES");
+		cardLayout.show(contenido,"CLIENTES");
 		
 		add(contenido,BorderLayout.CENTER);
 		setVisible(true);

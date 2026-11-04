@@ -25,7 +25,7 @@ public class Gimnasio {
 	private GestionActividadesClases gestionActividadesClases;
 	private GestionInventario gestionInventario;
 
-	public Gimnasio(String nombre, String dueno, String direccion, String telefono, int capacidadMaxima,Repository<Cliente,Integer> repoClientes) throws IOException {
+	public Gimnasio(String nombre, String dueno, String direccion, String telefono, int capacidadMaxima,Repository<Integer,Cliente> repoClientes) throws IOException {
 		this.nombre = nombre;
 		this.dueno = dueno;
 		this.direccion = direccion;

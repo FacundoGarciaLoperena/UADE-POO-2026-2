@@ -34,7 +34,7 @@ public class Cliente extends Persona {
 		this.estado = estado;
 	}
 	
-
+	
 	@JsonIgnore
 	public boolean isActivo()
 	{
@@ -47,13 +47,11 @@ public class Cliente extends Persona {
 		return this.estado.equals(EstadoCliente.SUSPENDIDO);
 	}
 	
-	    
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) return true;
-		if (!(obj instanceof Cliente)) return false;
+		if (!(obj instanceof Cliente otro)) return false;
 		
-		Cliente otro = (Cliente) obj;
 		return dni == otro.dni;
 	}
 	

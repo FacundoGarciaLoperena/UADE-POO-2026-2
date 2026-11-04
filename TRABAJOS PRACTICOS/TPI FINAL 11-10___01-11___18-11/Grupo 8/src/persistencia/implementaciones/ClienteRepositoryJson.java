@@ -14,7 +14,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import modelo.Cliente;
 import persistencia.Repository;
 
-public class ClienteRepositoryJson implements Repository<Cliente, Integer> {
+public class ClienteRepositoryJson implements Repository<Integer, Cliente> {
 
 	private final ObjectMapper mapper = JsonMapper.builder()
 	        .addModule(new JavaTimeModule())
@@ -28,7 +28,7 @@ public class ClienteRepositoryJson implements Repository<Cliente, Integer> {
 		if (!archivo.exists() || archivo.length() == 0) {
 	        return new HashMap<Integer, Cliente>();
 	    }
-
+		
 		JavaType tipoMap = mapper.getTypeFactory().constructMapType(Map.class, Integer.class, Cliente.class);
 
 		return mapper.readValue(archivo, tipoMap);

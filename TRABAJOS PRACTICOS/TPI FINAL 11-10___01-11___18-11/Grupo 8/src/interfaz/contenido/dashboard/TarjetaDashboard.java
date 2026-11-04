@@ -26,7 +26,7 @@ public class TarjetaDashboard extends JPanel {
 		setBackground(FONDO);
 		setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(BORDE),
 				BorderFactory.createEmptyBorder(15, 15, 15, 15)));
-
+		
 		JLabel tituloLabel = new JLabel(titulo);
 		tituloLabel.setFont(new Font("Arial", Font.BOLD, 13));
 		tituloLabel.setForeground(COLOR_TITULO);

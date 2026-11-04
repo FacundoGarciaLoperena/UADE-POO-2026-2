@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,12 +15,13 @@ public class Membresia {
 	public enum EstadoMembresia {
 		VIGENTE, VENCIDA, CANCELADA
 	}
-
+	
 	private int idMembresia;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
 	private EstadoMembresia estado;
 	private Plan plan;
+	@JsonIgnore
 	private Cliente cliente;
 	private Map<Integer,Pago> pagos = new HashMap<Integer,Pago>();
 
@@ -31,4 +34,6 @@ public class Membresia {
 		this.plan = plan;
 		this.cliente = cliente;
 	}
+	
+	
 }
