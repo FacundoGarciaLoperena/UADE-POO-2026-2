@@ -10,13 +10,15 @@ import javax.swing.JTable;
 
 
 import interfaz.contenido.PanelBase;
+import modelo.GestionClientes;
+import modelo.Gimnasio;
 
 public class DashboardPanel extends PanelBase{
 	
 	
 	private static final long serialVersionUID = 1L;
 
-	public DashboardPanel(){
+	public DashboardPanel(Gimnasio gimnasio){
 		
 		super("Dashboard");
 		
@@ -29,7 +31,7 @@ public class DashboardPanel extends PanelBase{
 		contenido.add(contenidoTop, BorderLayout.NORTH);
 		
 		contenidoTop.add(new TarjetaDashboard(
-		    "Miembros activos", "30", "Socios con membresía"
+		    "Miembros activos", String.valueOf(gimnasio.getGestionClientes().contarClientesActivos()), "Socios con membresía"
 		));
 
 		contenidoTop.add(new TarjetaDashboard(

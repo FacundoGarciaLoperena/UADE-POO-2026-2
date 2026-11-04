@@ -1,7 +1,7 @@
 package modelo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import lombok.Setter;
 public class Plan {
 	private String nombre;
 	private String descripcion;
-	private Set<Perk> perks;
+	private Map<Integer,Perk> perks = new HashMap<Integer,Perk>();
 	private int duracionDias;
 	private double precio;
 
@@ -20,6 +20,6 @@ public class Plan {
 		this.descripcion = descripcion;
 		this.duracionDias = duracionDias;
 		this.precio = precio;
-		this.perks = new HashSet<>();
+		
 	}
 }

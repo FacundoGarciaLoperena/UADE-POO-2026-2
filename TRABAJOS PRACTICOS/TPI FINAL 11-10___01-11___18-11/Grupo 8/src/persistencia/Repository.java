@@ -1,18 +1,12 @@
 package persistencia;
 
-import java.util.List;
+import java.io.IOException;
+import java.util.Map;
 
 public interface Repository<T, ID> {
 
-    void agregar(T entidad);
+	Map<ID, T> cargarTodos() throws IOException;
 
-    List<T> obtenerTodos();
-
-    T obtenerPorId(ID id);
-
-    void modificar(T entidad);
-
-    void eliminar(ID id);
-
-    void eliminarTodos();
+	void guardarTodos(Map<ID, T> entidades) throws IOException;
+	
 }

@@ -2,9 +2,9 @@ package modelo;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -34,20 +34,20 @@ public class Cliente extends Persona {
 		this.estado = estado;
 	}
 	
-	public int getDni() {
-		return this.dni;
-	}
-	
+
+	@JsonIgnore
 	public boolean isActivo()
 	{
 		return this.estado.equals(EstadoCliente.ACTIVO);
 	}
 	
+	@JsonIgnore
 	public boolean isMoroso()
 	{
 		return this.estado.equals(EstadoCliente.SUSPENDIDO);
 	}
 	
+	    
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) return true;

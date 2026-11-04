@@ -6,12 +6,15 @@ import javax.swing.*;
 
 import interfaz.contenido.dashboard.DashboardPanel;
 import interfaz.menu.MenuIzq;
+import modelo.Gimnasio;
 
 public class VentanaPrincipal extends JFrame {
 	private static final long serialVersionUID = 1L;
+	private Gimnasio gimnasio;
 
-	public VentanaPrincipal() {
-
+	public VentanaPrincipal(Gimnasio gimnasio) {
+		this.gimnasio = gimnasio;
+		
 		setTitle("Gym Manager");
 		setSize(1000, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +29,7 @@ public class VentanaPrincipal extends JFrame {
 		contenido.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
 		
 		
-		DashboardPanel dashboard = new DashboardPanel();
+		DashboardPanel dashboard = new DashboardPanel(gimnasio);
 
 		contenido.add(dashboard, "DASHBOARD");
 		cardLayout.show(contenido,"DASHBOARD");

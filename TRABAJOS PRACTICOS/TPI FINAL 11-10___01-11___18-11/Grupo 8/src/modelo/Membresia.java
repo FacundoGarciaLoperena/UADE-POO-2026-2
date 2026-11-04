@@ -1,8 +1,8 @@
 package modelo;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ public class Membresia {
 	private EstadoMembresia estado;
 	private Plan plan;
 	private Cliente cliente;
-	private Set<Pago> pagos;
+	private Map<Integer,Pago> pagos = new HashMap<Integer,Pago>();
 
 	public Membresia(int idMembresia, LocalDate fechaInicio, LocalDate fechaFin, EstadoMembresia estado, Plan plan,
 			Cliente cliente) {
@@ -30,6 +30,5 @@ public class Membresia {
 		this.estado = estado;
 		this.plan = plan;
 		this.cliente = cliente;
-		this.pagos = new HashSet<>();
 	}
 }

@@ -1,6 +1,6 @@
 package excepciones;
 
-public class ClienteNoEncontradoException extends Exception {
+public class ClienteNoEncontradoException extends ClienteException {
 
 	private static final long serialVersionUID = 1L;
 	

@@ -1,7 +1,10 @@
 package modelo;
 
+import java.io.IOException;
+
 import lombok.Getter;
 import lombok.Setter;
+import persistencia.Repository;
 
 @Getter
 public class Gimnasio {
@@ -22,13 +25,13 @@ public class Gimnasio {
 	private GestionActividadesClases gestionActividadesClases;
 	private GestionInventario gestionInventario;
 
-	public Gimnasio(String nombre, String dueno, String direccion, String telefono, int capacidadMaxima) {
+	public Gimnasio(String nombre, String dueno, String direccion, String telefono, int capacidadMaxima,Repository<Cliente,Integer> repoClientes) throws IOException {
 		this.nombre = nombre;
 		this.dueno = dueno;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.capacidadMaxima = capacidadMaxima;
-		this.gestionClientes = new GestionClientes();
+		this.gestionClientes = new GestionClientes(repoClientes);
 		this.gestionEmpleados = new GestionEmpleados();
 		this.gestionPlanesYMembresias = new GestionPlanesYMembresias();
 		this.gestionPagos = new GestionPagos();

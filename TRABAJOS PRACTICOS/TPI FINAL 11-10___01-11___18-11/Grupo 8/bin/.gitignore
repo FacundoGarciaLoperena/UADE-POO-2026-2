@@ -1,6 +1,4 @@
-/modelo/
-/interfaz/
 /persistencia/
-/expeciones/
+/modelo/
 /excepciones/
-/data/
+/interfaz/
