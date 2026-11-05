@@ -40,7 +40,7 @@ public class DashboardPanel extends PanelBase{
 		));
 
 		contenidoTop.add(new TarjetaDashboard(
-		    "Requieren atención", "4", "Situaciones pendientes"
+		    "Requieren atención", String.valueOf(gimnasio.getGestionClientes().contarClientesMorosos()), "Clientes morosos"
 		));
 			
 		//Fila de abajo			

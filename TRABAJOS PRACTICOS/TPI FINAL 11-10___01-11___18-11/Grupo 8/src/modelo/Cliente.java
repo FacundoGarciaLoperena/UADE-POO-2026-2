@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,8 +26,12 @@ public class Cliente extends Persona {
 	private Map<Integer,Membresia> membresias = new HashMap<Integer,Membresia>();
 	private Map<Integer,Ingreso> ingresos = new HashMap<Integer,Ingreso>();
 
-	public Cliente(String nombreCompleto, LocalDate fechaNacimiento, Genero genero, int dni, String telefono,
-			String mail, LocalDate fechaAlta, EstadoCliente estado) {
+	//JsonCreator para que Jackson pueda leer los clientes del json
+	@JsonCreator
+	public Cliente(@JsonProperty("nombreCompleto") String nombreCompleto,
+			@JsonProperty("fechaNacimiento") LocalDate fechaNacimiento, @JsonProperty("genero") Genero genero,
+			@JsonProperty("dni") int dni, @JsonProperty("telefono") String telefono, @JsonProperty("mail") String mail,
+			@JsonProperty("fechaAlta") LocalDate fechaAlta, @JsonProperty("estado") EstadoCliente estado) {
 		super(nombreCompleto, fechaNacimiento, genero);
 		this.dni = dni;
 		this.telefono = telefono;

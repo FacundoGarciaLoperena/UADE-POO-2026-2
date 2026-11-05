@@ -19,4 +19,9 @@ public class Empleado extends Persona {
 		this.salario = salario;
 		this.fechaContratacion = fechaContratacion;
 	}
+
+	@Override
+	public String toString() {
+		return getNombreCompleto();
+	}
 }

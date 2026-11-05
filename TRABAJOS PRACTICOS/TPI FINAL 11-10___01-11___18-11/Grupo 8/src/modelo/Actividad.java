@@ -21,7 +21,16 @@ public class Actividad {
 		if (this == obj) return true;
 		if (!(obj instanceof Actividad otro)) return false;
 		
-		return nombre == otro.nombre;
-		
+		return nombre.equals(otro.nombre);
+	}
+	
+	@Override
+	public int hashCode() {
+		return nombre.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return nombre;
 	}
 }

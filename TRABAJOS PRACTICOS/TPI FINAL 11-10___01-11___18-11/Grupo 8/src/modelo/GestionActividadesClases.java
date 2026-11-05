@@ -1,8 +1,13 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import excepciones.ClaseDuplicadaException;
+import excepciones.ClaseNoEncontradaException;
 import lombok.Getter;
 
 @Getter
@@ -40,27 +45,60 @@ public class GestionActividadesClases {
 			actividades.remove(a);
 	}
 
-	public void crearClase(Clase clase) {
+	public List<Actividad> listarActividades() {
+		List<Actividad> lista = new ArrayList<Actividad>(actividades);
+		lista.sort(Comparator.comparing(Actividad::getNombre));
+		return lista;
+	}
+
+	public void crearClase(Clase clase) throws ClaseDuplicadaException {
+		for (Clase c : clases) {
+			if (c.getIdClase() == clase.getIdClase())
+				throw new ClaseDuplicadaException("Ya existe una clase con id: " + clase.getIdClase());
+		}
 		clases.add(clase);
 	}
 
-	public Clase buscarClase(int idClase) {
+	public Clase buscarClase(int idClase) throws ClaseNoEncontradaException {
 		for (Clase c : clases) {
 			if (c.getIdClase() == idClase)
 				return c;
 		}
-		return null;
+		throw new ClaseNoEncontradaException("No se ha encontrado la clase con id: " + idClase);
 	}
 
-	public void actualizarClase(Clase clase) {
+	public void actualizarClase(Clase clase) throws ClaseNoEncontradaException {
 		eliminarClase(clase.getIdClase());
 		clases.add(clase);
 	}
 
-	public void eliminarClase(int idClase) {
+	public void eliminarClase(int idClase) throws ClaseNoEncontradaException {
 		Clase c = buscarClase(idClase);
-		if (c != null)
-			clases.remove(c);
+		clases.remove(c);
+	}
+	
+	//Ordenadas por fecha y hora de inicio
+	public List<Clase> listarClases() {
+		List<Clase> lista = new ArrayList<Clase>(clases);
+		lista.sort(Comparator.comparing(Clase::getHoraInicio));
+		return lista;
+	}
+	
+	public boolean profesorTieneClases(Profesor profesor) {
+		for (Clase c : clases) {
+			if (c.getProfesor() == profesor)
+				return true;
+		}
+		return false;
+	}
+	
+	public int siguienteIdClase() {
+		int max = 0;
+		for (Clase c : clases) {
+			if (c.getIdClase() > max)
+				max = c.getIdClase();
+		}
+		return max + 1;
 	}
 
 	public void crearInscripcion(Inscripcion inscripcion) {

@@ -1,6 +1,7 @@
 package interfaz.menu;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -22,7 +23,7 @@ public class MenuIzq extends JPanel {
 	private JButton clases;
 	private JButton planes;
 
-	public MenuIzq() {
+	public MenuIzq(CardLayout cardLayout, JPanel contenido) {
 
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(200, 400));
@@ -56,5 +57,12 @@ public class MenuIzq extends JPanel {
 
 			menuAdmin.add(boton);
 		}
+		
+		//Cada botón muestra su pestaña en el CardLayout de la ventana
+		dashboard.addActionListener(e -> cardLayout.show(contenido, "DASHBOARD"));
+		clientes.addActionListener(e -> cardLayout.show(contenido, "CLIENTES"));
+		profesores.addActionListener(e -> cardLayout.show(contenido, "PROFESORES"));
+		clases.addActionListener(e -> cardLayout.show(contenido, "CLASES"));
+		planes.setEnabled(false);
 	}
 }

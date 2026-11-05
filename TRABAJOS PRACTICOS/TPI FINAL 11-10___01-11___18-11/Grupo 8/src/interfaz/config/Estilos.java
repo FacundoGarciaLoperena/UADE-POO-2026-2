@@ -17,6 +17,7 @@ public final class Estilos {
 
 	public static final Color MENU = new Color(25, 35, 55);
 	public static final Color MENU_HOVER = new Color(40, 55, 80);
+	public static final Color BOTON_MENU = new Color(35, 48, 70);
 
 	public static final Color AZUL = new Color(45, 115, 210);
 	public static final Color AZUL_CLARO = new Color(225, 238, 255);
